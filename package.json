@@ -1,0 +1,12 @@
+{
+    "name": "ProjectOne",
+    "description": "first project",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows_projectOne.json",
+            "credentialsFile": "flows_projectOne_cred.json"
+        }
+    }
+}
