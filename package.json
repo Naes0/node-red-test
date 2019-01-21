@@ -7,6 +7,9 @@
         "settings": {
             "flowFile": "flows_projectOne.json",
             "credentialsFile": "flows_projectOne_cred.json"
+        },
+        "nodes": {
+            "ProjectOne_manifest": "manifest.js"
         }
     }
 }

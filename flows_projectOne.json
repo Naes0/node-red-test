@@ -7,34 +7,33 @@
         "info": ""
     },
     {
-        "id": "f7ea5f00.17844",
-        "type": "inject",
-        "z": "5f707bfb.3612a4",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 180,
-        "y": 140,
-        "wires": [
-            [
-                "7e7503cc.b3c98c"
-            ]
-        ]
+        "id": "7e97b3d1.942cac",
+        "type": "subflow",
+        "name": "testsubflow",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 180,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "7e7503cc.b3c98c"
+                    }
+                ]
+            }
+        ],
+        "out": []
     },
     {
         "id": "7e7503cc.b3c98c",
         "type": "function",
-        "z": "5f707bfb.3612a4",
+        "z": "7e97b3d1.942cac",
         "name": "",
         "func": "var thing = \"test sentance for publishing projects\";\nmsg.test = thing.toUpperCase();\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 360,
+        "x": 330,
         "y": 140,
         "wires": [
             [
@@ -45,15 +44,44 @@
     {
         "id": "c474e2dd.33545",
         "type": "debug",
-        "z": "5f707bfb.3612a4",
+        "z": "7e97b3d1.942cac",
         "name": "",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "true",
-        "x": 530,
+        "x": 490,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "a67925c5.e645d8",
+        "type": "subflow:7e97b3d1.942cac",
+        "z": "5f707bfb.3612a4",
+        "name": "",
+        "x": 280,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "9a922176.94fa4",
+        "type": "inject",
+        "z": "5f707bfb.3612a4",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "a67925c5.e645d8"
+            ]
+        ]
     }
 ]
